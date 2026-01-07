@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
@@ -31,26 +32,49 @@ class AuthController extends Controller
         ]);
     }
 
+    // public function login(Request $request)
+    // {
+    //     $request->validate([
+    //         'email' => 'required|email',
+    //         'password' => 'required'
+    //     ]);
+
+    //     $user = User::where('email', $request->email)->first();
+
+    //     if (!$user || !Hash::check($request->password, $user->password)) {
+    //         return response()->json([
+    //             'status' => false,
+    //             'message' => 'Invalid login details'
+    //         ], 401);
+    //     }
+
+    //     return response()->json([
+    //         'status' => true,
+    //         'message' => 'Login successful',
+    //         'data' => $user
+    //     ]);
+    // }
     public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+{
+    $credentials = $request->only('email', 'password');
 
-        $user = User::where('email', $request->email)->first();
-
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json([
-                'status' => false,
-                'message' => 'Invalid login details'
-            ], 401);
-        }
-
+    // if (!$token = auth()->attempt($credentials)) {
+    //     return response()->json([
+    //         'status' => false,
+    //         'message' => 'Invalid login details'
+    //     ], 401);
+    // }
+    if (!$token = JWTAuth::attempt($credentials)) {
         return response()->json([
-            'status' => true,
-            'message' => 'Login successful',
-            'data' => $user
-        ]);
+            'status' => false,
+            'message' => 'Invalid login details'
+        ], 401);
     }
+
+    return response()->json([
+        'status' => true,
+        'message' => 'Login successful',
+        'token' => $token
+    ]);
+}
 }
