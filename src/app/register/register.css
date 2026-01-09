@@ -26,6 +26,9 @@
   font-weight: 600;
   color: #2c3e50;
   margin: 0 0 8px 0;
+
+
+  
 }
 
 .subtitle {
@@ -97,7 +100,7 @@
 .btn-register {
   width: 100%;
   padding: 14px;
-  background-color: #1B84FF;
+  background-color: #ff0000;
   color: white;
   border: none;
   border-radius: 6px;
@@ -109,7 +112,7 @@
 }
 
 .btn-register:hover {
-  background-color: #4a6fd8;
+  background-color: #FF4D4D;
 }
 
 .btn-register:active {

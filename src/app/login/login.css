@@ -127,7 +127,7 @@
 .btn-signin {
   width: 100%;
   padding: 14px;
-  background-color: #1B84FF;
+  background-color: #ff0000;
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -139,7 +139,7 @@
 }
 
 .btn-signin:hover {
-  background-color: #4a6fd8;
+  background-color: #FF4D4D;
 }
 
 
