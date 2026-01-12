@@ -9,4 +9,11 @@ import { RouterModule } from '@angular/router';
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
-export class Sidebar {}
+export class Sidebar {
+  isCollapsed = false;
+
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+  
+}

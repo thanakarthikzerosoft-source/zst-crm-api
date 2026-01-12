@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="header">
+      <!-- Page Header -->
+      <div>
+        <div class="page-title">customers List - <span class="count">({{ totalCustomers }})</span></div>
+      </div>
+
+      <!-- Toolbar -->
+      <div>
+        <div class="toolbar">
+          <div class="search-box">
+            <img src="search.png" alt="Search" class="search-icon" />
+            <input type="text" placeholder="Search customers..." />
+          </div>
+
+          <button class="add-btn" (click)="Addcustomers()">
+            <img src="add.png" alt="Add" class="btn-icon" />
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper">
+      <table class="customers-table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>
+              <span class="status active">{{ customer.status }}</span>
+            </td>
+            <td class="actions">
+              <img
+                src="edit.png"
+                alt="Edit"
+                class="action-icon"
+                (click)="editCustomer(customer.id)"
+              />
+              <img
+                src="delete.png"
+                alt="Delete"
+                class="action-icon delete"
+                (click)="deleteCustomer(customer.id)"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

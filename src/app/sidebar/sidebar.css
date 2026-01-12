@@ -14,6 +14,11 @@ img {
     }
 }
 
+.back{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .main_side{
     background-color: #EDF4F8;
 }

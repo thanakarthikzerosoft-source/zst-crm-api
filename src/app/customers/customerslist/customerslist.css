@@ -86,19 +86,19 @@
   overflow-x: auto;
 }
 
-.leads-table {
+.customers-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.leads-table th,
-.leads-table td {
+.customers-table th,
+.customers-table td {
   padding: 12px;
   border-bottom: 1px solid #eee;
   text-align: left;
 }
 
-.leads-table th {
+.customers-table th {
   background-color: #f1f3f5;
   font-weight: 600;
 }
