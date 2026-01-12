@@ -11,9 +11,21 @@ class LeadDetail extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
+        'lead_assignee',
+        'lead_status',
+        'mobile',
         'email',
-        'phone',
-        'notes'
+        'company_name',
+        'industry_type',
+        'lead_source',
+        'website',
+        'street',
+        'city',
+        'state',
+        'country',
+        'zip_code',
+        'description',
     ];
 }
