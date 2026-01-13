@@ -45,7 +45,7 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let lead of leads" routerLink="/leads/view" class="clickable-row">
+          <tr *ngFor="let lead of leads" (click)="viewLead(lead.id)" class="clickable-row">
             <td>{{ lead.id }}</td>
             <td>{{ lead.name }}</td>
             <td>{{ lead.email }}</td>

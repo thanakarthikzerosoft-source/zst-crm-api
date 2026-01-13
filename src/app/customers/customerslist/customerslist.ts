@@ -22,6 +22,11 @@ export class Customerslist {
     { id: 10, name: 'Thabo Mokoena', email: 'thabo@mail.com', phone: '9555666777', status: 'Active' }
   ];
 
+  viewCustomer(id: number) {
+    console.log('Edit Customer:', id);
+    this.router.navigate(['/customers/view', [id]]);
+  }
+
 
   editCustomer(id: number) {
     console.log('Edit customer:', id);

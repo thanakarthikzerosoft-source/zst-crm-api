@@ -42,7 +42,7 @@ export class Leadslist implements OnInit {
 
   getLeads() {
     const token =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3ZlcmlmeS1vdHAiLCJpYXQiOjE3NjgyODQzNjMsImV4cCI6MTc2ODI4Nzk2MywibmJmIjoxNzY4Mjg0MzYzLCJqdGkiOiJLcGlNSGtIcVcyS3V4NGw0Iiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.CMa8vmWMHdQGaMvzZxu2UHzLTc9UEQhS03jNU8eGckY';
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3ZlcmlmeS1vdHAiLCJpYXQiOjE3NjgyOTcyMDYsImV4cCI6MTc2ODMwMDgwNiwibmJmIjoxNzY4Mjk3MjA2LCJqdGkiOiJTaUVpcWcxYmxsaERtclhUIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RqgYeeIhzntkKllF5QxPIPVCmWWyEyDtY-sA86nzA84';
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -96,10 +96,16 @@ export class Leadslist implements OnInit {
     this.router.navigate(['/leads/view', [id]]);
   }
 
+  
+  viewLead(id: number) {
+    console.log('Edit lead:', id);
+    this.router.navigate(['/leads/view', id]);
+  }
+
   deleteLead(id: number) {
     console.log('Deleting lead:', id);
     const token =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3ZlcmlmeS1vdHAiLCJpYXQiOjE3NjgyODQzNjMsImV4cCI6MTc2ODI4Nzk2MywibmJmIjoxNzY4Mjg0MzYzLCJqdGkiOiJLcGlNSGtIcVcyS3V4NGw0Iiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.CMa8vmWMHdQGaMvzZxu2UHzLTc9UEQhS03jNU8eGckY';
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3ZlcmlmeS1vdHAiLCJpYXQiOjE3NjgyOTcyMDYsImV4cCI6MTc2ODMwMDgwNiwibmJmIjoxNzY4Mjk3MjA2LCJqdGkiOiJTaUVpcWcxYmxsaERtclhUIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RqgYeeIhzntkKllF5QxPIPVCmWWyEyDtY-sA86nzA84';
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });

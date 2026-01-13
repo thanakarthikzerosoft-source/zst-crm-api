@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 
 @Component({
@@ -40,7 +41,7 @@ export class Leadsadd {
   ) {}
 
   async saveLead() {
-    const apiUrl = 'http://127.0.0.1:8000/api/post_leads';
+    const apiUrl = 'http://127.0.0.1:8000/api/leads';
     console.log('Lead saved successfully:', this.lead);
     try {
       const response = await firstValueFrom(this.http.post(apiUrl, this.lead));
