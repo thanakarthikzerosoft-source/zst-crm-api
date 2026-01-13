@@ -28,13 +28,18 @@ export class Customerslist {
   }
 
 
-  editCustomer(id: number) {
-    console.log('Edit customer:', id);
+
+
+  editCustomer(id: number, event: Event) {
+    event.stopPropagation();
+    console.log('Edit', id);
   }
 
-  deleteCustomer(id: number) {
-    console.log('Delete customer:', id);
+  deleteCustomer(id: number, event: Event) {
+    event.stopPropagation();
+    console.log('Delete', id);
   }
+
 
   get totalCustomers(): number {
     return this.customers.length;
