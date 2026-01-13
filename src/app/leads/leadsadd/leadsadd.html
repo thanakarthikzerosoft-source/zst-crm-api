@@ -10,16 +10,16 @@
       <button type="button" class="btn back" (click)="goBack()">Back</button>
       
       <div class="right-actions">
-        <button type="button" class="btn clear" (click)="clearForm()">Clear</button>
+        <button type="button" class="btn clear" (click)="clearForm()" *ngIf="!leadId">Clear</button>
         <button type="submit" form="leadForm" class="btn save" [disabled]="leadForm.invalid">
-          Save
+         {{ leadId ? 'Update' : 'Save' }} 
         </button>
       </div>
     </div>
   </div>
 
   <!-- FORM -->
-  <form id="leadForm" #leadForm="ngForm" (ngSubmit)="saveLead()">
+  <form id="leadForm" #leadForm="ngForm" (ngSubmit)=" leadId? updateLead(leadId) : saveLead() ">
     <!-- TWO COLUMN LAYOUT -->
     <div class="form-layout">
       <!-- LEFT -->

@@ -21,8 +21,9 @@ export const routes: Routes = [
     children: [
       {path: 'dashboard', component: Dashboard },
       { path: 'leads', component: Leadslist },
+      { path: 'leads/add/:id', component: Leadsadd },
       { path: 'leads/add', component: Leadsadd },
-      { path: 'leads/view', component: Leadsview },
+      { path: 'leads/view/:id', component: Leadsview },
       { path: 'customers', component: Customerslist },
       { path: 'customers/add', component: Customersadd },
       { path: 'customers/view', component: Customersview },

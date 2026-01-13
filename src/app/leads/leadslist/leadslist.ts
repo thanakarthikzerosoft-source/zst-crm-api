@@ -42,7 +42,7 @@ export class Leadslist implements OnInit {
 
   getLeads() {
     const token =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3ZlcmlmeS1vdHAiLCJpYXQiOjE3NjgyOTcyMDYsImV4cCI6MTc2ODMwMDgwNiwibmJmIjoxNzY4Mjk3MjA2LCJqdGkiOiJTaUVpcWcxYmxsaERtclhUIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RqgYeeIhzntkKllF5QxPIPVCmWWyEyDtY-sA86nzA84';
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3ZlcmlmeS1vdHAiLCJpYXQiOjE3NjgzMDI4NTQsImV4cCI6MTc2ODMwNjQ1NCwibmJmIjoxNzY4MzAyODU0LCJqdGkiOiI4d1pSbkVuWDh3RTkxcktBIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.rqfyjI2Dy45vhpipUrY-GqbOX2QTZF4jGwZ76khp2O4';
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -77,9 +77,9 @@ export class Leadslist implements OnInit {
 
     this.leads = this.allLeads.filter(
       (lead) =>
-        lead.name.toLowerCase().includes(value) ||
+        lead.first_name.toLowerCase().includes(value) ||
         lead.email.toLowerCase().includes(value) ||
-        lead.phone.toLowerCase().includes(value)
+        lead.mobile.toLowerCase().includes(value)
     );
   }
 
@@ -105,7 +105,7 @@ export class Leadslist implements OnInit {
   deleteLead(id: number) {
     console.log('Deleting lead:', id);
     const token =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3ZlcmlmeS1vdHAiLCJpYXQiOjE3NjgyOTcyMDYsImV4cCI6MTc2ODMwMDgwNiwibmJmIjoxNzY4Mjk3MjA2LCJqdGkiOiJTaUVpcWcxYmxsaERtclhUIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RqgYeeIhzntkKllF5QxPIPVCmWWyEyDtY-sA86nzA84';
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3ZlcmlmeS1vdHAiLCJpYXQiOjE3NjgzMDI0MDEsImV4cCI6MTc2ODMwNjAwMSwibmJmIjoxNzY4MzAyNDAxLCJqdGkiOiJsNlNpaUpmaHhOWTBGREtvIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dxlQEEqvCf31TbqqJj9QB61E3eRxzNJpIjHBg2nZqMI';
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });

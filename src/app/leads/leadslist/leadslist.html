@@ -39,7 +39,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Notes</th>
+            <th>Lead Asignee</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -47,10 +47,10 @@
         <tbody>
           <tr *ngFor="let lead of leads" (click)="viewLead(lead.id)" class="clickable-row">
             <td>{{ lead.id }}</td>
-            <td>{{ lead.name }}</td>
+            <td>{{ lead.first_name }}</td>
             <td>{{ lead.email }}</td>
-            <td>{{ lead.phone }}</td>
-            <td>{{ lead.notes }}</td>
+            <td>{{ lead.mobile }}</td>
+            <td>{{ lead.lead_assignee }}</td>
 
             <td class="actions">
               <img src="edit.png" class="action-icon" (click)="editLead(lead.id)" />

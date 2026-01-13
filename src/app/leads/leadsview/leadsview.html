@@ -7,7 +7,7 @@
 
     <div class="form-actions">
       <button class="btn back" (click)="goBack()">Back</button>
-      <button class="btn edit" >Edit</button>
+      <button class="btn edit"  (click)="goToEdit()">Edit</button>
     </div>
   </div>
 
@@ -19,15 +19,15 @@
       <h3 class="card-title">Basic Information</h3>
 
       <div class="info-grid">
-        <div><span>First Name</span><p>John</p></div>
-        <div><span>Last Name</span><p>Doe</p></div>
-        <div><span>Email</span><p>john.doe@email.com</p></div>
-        <div><span>Mobile</span><p>9876543210</p></div>
-        <div><span>Company</span><p>ABC Technologies</p></div>
-        <div><span>Industry</span><p>Software Services</p></div>
-        <div><span>Assignee</span><p>Sanjay</p></div>
-        <div><span>Source</span><p>Website</p></div>
-        <div><span>Website</span><p>www.abctech.com</p></div>
+        <div><span>First Name</span><p>{{leads?.first_name}}</p></div>
+        <div><span>Last Name</span><p>{{ leads?.last_name }}</p></div>
+        <div><span>Email</span><p>{{ leads?.email }}</p></div>
+        <div><span>Mobile</span><p>{{ leads?.mobile }}</p></div>
+        <div><span>Company</span><p>{{ leads?.company_name }}</p></div>
+        <div><span>Industry</span><p>{{ leads?.industry_type }}</p></div>
+        <div><span>Assignee</span><p>{{ leads?.lead_assignee }}</p></div>
+        <div><span>Source</span><p>{{ leads?.lead_source }}</p></div>
+        <div><span>Website</span><p>{{ leads?.website }}</p></div>
       </div>
     </div>
 
@@ -36,18 +36,18 @@
       <h3 class="card-title">Address</h3>
 
       <div class="info-grid">
-        <div><span>Door No</span><p>12A</p></div>
-        <div><span>Street</span><p>MG Road</p></div>
-        <div><span>City</span><p>Bangalore</p></div>
-        <div><span>State</span><p>Karnataka</p></div>
-        <div><span>Country</span><p>India</p></div>
-        <div><span>Zip Code</span><p>560001</p></div>
+        <div><span>Door No</span><p>{{ leads?.street  }}</p></div>
+        <div><span>Street</span><p>{{ leads?.street  }}</p></div>
+        <div><span>City</span><p>{{ leads?.city  }}</p></div>
+        <div><span>State</span><p>{{ leads?.state  }}</p></div>
+        <div><span>Country</span><p>{{ leads?.country  }}</p></div>
+        <div><span>Zip Code</span><p>{{ leads?.zip_code  }}</p></div>
       </div>
 
       <div class="description-box">
         <span>Description</span>
         <p>
-          This is a sample Lead profile used for displaying how the data will look in the CRM system.
+          {{ leads?.description }}
         </p>
       </div>
     </div>
