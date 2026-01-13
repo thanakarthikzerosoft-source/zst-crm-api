@@ -36,9 +36,6 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/verify-email', [AuthController::class, 'verifyEmail']);
 Route::post('/verify-otp', [AuthController::class, 'verifyOtp']);
 
-Route::get('/get_leads', [LeadController::class, 'index']);
-Route::get('/get_leads/{id}', [LeadController::class, 'show']);
-
 Route::middleware(['jwt.auth'])->group(function () { //jwt.aut is use to JWT
 
     Route::get('/leads', [LeadController::class, 'index']);

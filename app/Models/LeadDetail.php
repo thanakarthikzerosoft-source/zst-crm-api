@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class LeadDetail extends Model
+class LeadDetail extends Model  //lead_details is db table name
+// if you already table is "use -> protected $table = 'leads';"
 {
     use HasFactory;
 
