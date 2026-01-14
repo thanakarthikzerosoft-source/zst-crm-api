@@ -26,6 +26,8 @@
           <tr>
             <th>Id</th>
             <th>Name</th>
+
+            
             <th>Email</th>
             <th>Phone</th>
             <th>Status</th>
@@ -35,20 +37,15 @@
 
         <tbody>
           <tr *ngFor="let customer of customers" (click)="viewCustomer(customer.id)" class="clickable-row">
-
             <td>{{ customer.id }}</td>
             <td>{{ customer.name }}</td>
             <td>{{ customer.email }}</td>
             <td>{{ customer.phone }}</td>
             <td>
-
-
               <span class="status active">{{ customer.status }}</span>
             </td>
-
             <td class="actions">
               <img src="edit.png" alt="Edit" class="action-icon" (click)="editCustomer(customer.id, $event)" />
-
               <img src="delete.png" alt="Delete" class="action-icon delete"
                 (click)="deleteCustomer(customer.id, $event)" />
             </td>
