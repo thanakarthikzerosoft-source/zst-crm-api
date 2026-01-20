@@ -34,7 +34,6 @@ export class Dashboard implements AfterViewInit {
 
   ngAfterViewInit() {
 
-    // Total Leads
     new Chart('totalLeads', {
       type: 'doughnut',
       data: {
@@ -46,7 +45,6 @@ export class Dashboard implements AfterViewInit {
       }
     });
 
-    // Total Customers
     new Chart('totalCustomers', {
       type: 'doughnut',
       data: {
@@ -58,7 +56,6 @@ export class Dashboard implements AfterViewInit {
       }
     });
 
-    // Active vs Inactive Leads
     new Chart('leadsStatus', {
       type: 'pie',
       data: {
@@ -70,7 +67,6 @@ export class Dashboard implements AfterViewInit {
       }
     });
 
-    // Active vs Inactive Customers
     new Chart('customersStatus', {
       type: 'pie',
       data: {
@@ -82,7 +78,6 @@ export class Dashboard implements AfterViewInit {
       }
     });
 
-    // Leads by Month
     new Chart('leadsMonth', {
       type: 'bar',
       data: {
@@ -95,7 +90,6 @@ export class Dashboard implements AfterViewInit {
       }
     });
 
-    // Customers by Month
     new Chart('customersMonth', {
       type: 'bar',
       data: {
@@ -108,7 +102,6 @@ export class Dashboard implements AfterViewInit {
       }
     });
 
-    // Leads vs Customers
     new Chart('leadsVsCustomers', {
       type: 'line',
       data: {
