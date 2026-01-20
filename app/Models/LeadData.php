@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class LeadData extends Model
 {
      use HasFactory;
-     protected $table = 'lead_data';
+     protected $table = 'lead_datas';
      protected $fillable = [
         'first_name',
         'last_name',
